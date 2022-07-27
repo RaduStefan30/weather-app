@@ -1,68 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Monserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 main {
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 0.4fr;
 }
 
+.hide {
+  display: none;
+}
+
+.city-big svg {
+  transform: translateY(1rem) translateX(1rem);
+}
+
 .left {
+  color: #fff;
   position: relative;
+  backdrop-filter: brightness(70%);
 }
 
 .right {
+  overflow-y: scroll;
   backdrop-filter: blur(10px) brightness(50%);
   display: flex;
   flex-direction: column;
-  min-width: 400px;
-}
-
-.weather-big {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: absolute;
-  left: 10%;
-  bottom: 0%;
+  min-width: 40rem;
 }
 
 .temperature-big {
-  grid-row: 1/3;
-  font-size: 8rem;
+  font-size: 11rem;
   font-weight: 300;
+  position: absolute;
+  left: 13rem;
+  bottom: -3rem;
 }
 
 .city-big {
   font-weight: 400;
-  font-size: 4rem;
-  transform: translateY(3.2rem);
+  font-size: 6rem;
+  position: absolute;
+  left: 32rem;
+  bottom: 4rem;
 }
 
 .city-date-big {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 400;
-  transform: translateY(-3.4rem);
+  position: absolute;
+  left: 32.4rem;
+  bottom: 1.8rem;
+  min-width: 300px;
 }
 
 .search-form {
   display: flex;
-  margin-top: 4rem;
   justify-content: center;
-  margin: 4.8rem 4rem;
+  margin: 6rem 6rem;
 }
 
 .search-input {
@@ -71,7 +78,7 @@ main {
   background-color: transparent;
   border-bottom: 1px solid #aaa;
 
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-family: inherit;
   color: #aaa;
   width: 100%;
@@ -80,8 +87,8 @@ main {
 .search-btn {
   border: none;
   background-color: #aaa;
-  font-size: 1.6rem;
-  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
 }
 
 .search-btn:hover,
@@ -96,29 +103,143 @@ main {
 }
 
 .weather-details {
-  border-top: 1px solid #aaa;
-  margin: 4.8rem 4rem;
+  margin: 0rem 6rem;
 }
 
 .weather-details-title {
-  margin-top: 5rem;
-  margin-bottom: 4rem;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
 }
 
 .details {
   margin-top: 2rem;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .label {
   color: #aaa;
+  letter-spacing: 0.12rem;
 }
 
 .text {
   color: #fff;
   position: absolute;
   right: 0;
+}
+
+.suggestions p {
+  color: #aaa;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.suggestions {
+  border-bottom: 1px solid #aaa;
+  margin: 0 6rem;
+}
+
+.weather-details:last-child {
+  margin-bottom: 6rem;
+}
+
+@media screen and (max-width: 87.5rem) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 69rem) {
+  html {
+    font-size: 50%;
+  }
+  .details {
+    font-size: 2.2rem;
+  }
+  .weather-details-title {
+    font-size: 2.4rem;
+  }
+  .right {
+    min-width: 45rem;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+  .left {
+    height: 100%;
+  }
+  .temperature-big {
+    font-size: 10rem;
+    left: 5rem;
+    bottom: -3rem;
+  }
+
+  .city-big {
+    font-size: 5rem;
+    left: 22rem;
+    bottom: 4rem;
+    min-width: 50rem;
+  }
+
+  .city-date-big {
+    font-size: 2rem;
+    left: 22.3rem;
+    bottom: 1rem;
+    min-width: 50rem;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  main {
+    height: 100%;
+  }
+
+  .hide {
+    display: block;
+  }
+
+  .right {
+    width: 100vw;
+    height: fit-content;
+    /* backdrop-filter: brightness(0%); */
+  }
+
+  .temperature-big {
+    display: none;
+  }
+
+  .city-big {
+    display: none;
+  }
+
+  .city-date-big {
+    display: none;
+  }
+
+  .weather-small {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: -10rem;
+  }
+
+  .weather-small-city {
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  .weather-small-temp {
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  .weather-small-date {
+    font-weight: 400;
+    font-size: 3rem;
+    color: #aaa;
+    text-align: center;
+  }
 }
