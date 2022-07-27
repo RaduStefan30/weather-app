@@ -1,13 +1,124 @@
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+}
+
+.left {
+  position: relative;
+}
+
+.right {
+  backdrop-filter: blur(10px) brightness(50%);
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.weather-big {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  left: 10%;
+  bottom: 0%;
+}
+
+.temperature-big {
+  grid-row: 1/3;
+  font-size: 8rem;
+  font-weight: 300;
+}
+
+.city-big {
+  font-weight: 400;
+  font-size: 4rem;
+  transform: translateY(3.2rem);
+}
+
+.city-date-big {
+  font-size: 1.6rem;
+  font-weight: 400;
+  transform: translateY(-3.4rem);
+}
+
+.search-form {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+  margin: 4.8rem 4rem;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #aaa;
+
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #aaa;
+  width: 100%;
+}
+
+.search-btn {
+  border: none;
+  background-color: #aaa;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+}
+
+.search-btn:hover,
+.search-btn:active {
+  cursor: pointer;
+  background-color: #bbb;
+  transition: all 0.3s;
+}
+
+.search-btn:active {
+  transform: scale(0.9);
+}
+
+.weather-details {
+  border-top: 1px solid #aaa;
+  margin: 4.8rem 4rem;
+}
+
+.weather-details-title {
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.details {
+  margin-top: 2rem;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.label {
+  color: #aaa;
+}
+
+.text {
+  color: #fff;
+  position: absolute;
+  right: 0;
 }
