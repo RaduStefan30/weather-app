@@ -1,1 +1,1 @@
-My first attempt in building a weather app using an external api.
+My first attempt at building a weather app using an external api.
